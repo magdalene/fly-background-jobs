@@ -13,10 +13,6 @@ def render_index():
 
 
 def send_email():
-    print(request.form.keys())
-    print(request.form["address"])
-    print(request.form["subject"])
-    print(request.form["body"])
     address = request.form["address"]
     subject = request.form["subject"]
     body = request.form["body"]
