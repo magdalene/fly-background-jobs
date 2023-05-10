@@ -1,0 +1,4 @@
+Flask==2.3.2
+redis==4.5.5
+requests==2.30.0
+gunicorn==20.1.0
