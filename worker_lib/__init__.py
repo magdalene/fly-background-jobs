@@ -14,8 +14,6 @@ FLY_REGION = os.environ.get("FLY_REGION", "ams")
 
 WORKER_IMAGE = os.environ.get("WORKER_IMAGE", "dshock/flyio-machines-worker:latest")
 REDIS_URL = os.environ.get("REDIS_URL")
-MAILJET_API_KEY = os.environ.get("MAILJET_API_KEY")
-MAILJET_API_SECRET_KEY = os.environ.get("MAILJET_API_SECRET_KEY")
 
 TASKS_KEY_PREFIX = "tasks:"
 RESULTS_KEY_PREFIX = "results:"
@@ -44,11 +42,8 @@ def run_task(module_name, function_name, args=None, kwargs=None):
         "config": {
             "image": WORKER_IMAGE,
             "env": {
-                "REDIS_URL": REDIS_URL,
                 "REDIS_TASK_INFO_KEY": redis_task_info_key,
-                "REDIS_RESULTS_KEY": redis_results_key,
-                "MAILJET_API_KEY": MAILJET_API_KEY,
-                "MAILJET_API_SECRET_KEY": MAILJET_API_SECRET_KEY
+                "REDIS_RESULTS_KEY": redis_results_key
             },
             "processes": [{
                 "name": "worker",
