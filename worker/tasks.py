@@ -39,4 +39,4 @@ def send_email(address, subject, body, to_name=None, from_email="shockley@dshock
 
 def dummy_send_email(address, subject, body, to_name=None, from_email="shockley@dshockley.com", from_name="Darla Shockley"):
     # sleep a few seconds to simulate very slow email sending
-    sleep(5)
+    sleep(2)
