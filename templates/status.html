@@ -4,6 +4,9 @@
     </head>
     <body>
         <h2>Status: {{ status }}</h2>
+        {% if status == "PENDING" %}
+        <p>Refresh the page to update the status</p>
+        {% endif %}
         <h3><a href="/">Send another one</a></h3>
         {% if details %}
         <p>{{ details }}</p>
