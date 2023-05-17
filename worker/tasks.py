@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from mailjet_rest import Client
 
@@ -34,3 +35,8 @@ def send_email(address, subject, body, to_name=None, from_email="shockley@dshock
     result = mailjet.send.create(data=data)
     if result.status_code >= 400:
         raise Exception(result.text)
+
+
+def dummy_send_email(address, subject, body, to_name=None, from_email="shockley@dshockley.com", from_name="Darla Shockley"):
+    # sleep a few seconds to simulate very slow email sending
+    sleep(5)

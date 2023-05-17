@@ -16,7 +16,7 @@ def send_email():
     address = request.form["address"]
     subject = request.form["subject"]
     body = request.form["body"]
-    send_id = run_task("tasks", "send_email", [address, subject, body])["task_id"]
+    send_id = run_task("tasks", "dummy_send_email", [address, subject, body])["task_id"]
     return redirect(url_for("status", send_id=send_id))
 
 
